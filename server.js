@@ -5,6 +5,7 @@ var app=express();
 
 app.get('/baja',(req,res)=>{
 res.send('in index js node');
+res.render('index');
 alert('check');
 });
 
