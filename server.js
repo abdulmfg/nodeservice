@@ -3,7 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 var app=express();
 
-app.get('/',(req,res)=>{
+app.get('/baja',(req,res)=>{
 res.send('in index js node');
 alert('check');
 });
