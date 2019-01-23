@@ -3,18 +3,22 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 var app=express();
 
-//app.set('view engine', 'ejs').get('/baja',(req,res)=>{
+app.use(express.static(path.join(__dirname,'public')));
+app.set('views',path.join(__dirname,'views'))
+app.set('view engine', 'ejs');
+app.get('/baja',(req,res)=>{
 //res.send('in index js node');
-//res.render('index');
-//});
+res.render('/pages/index');
+});
 
-//app.listen(PORT,()=>console.log('listening on port'));
+app.listen(PORT,()=>console.log('listening on port'));
 
 
 
-express()
+/*express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+*/
