@@ -25,7 +25,19 @@ app.delete('/',(req,res)=>{
     employees.pop();
     res.send(employees);
 })
-
+app.put('/:id',(req,res)=>{
+    let newName=req.body.name;
+    let oldId=req.params.id;
+    if(oldId){
+        for(let x=0;x<employees.length;x++){
+            let emp = employees[x];
+            if(emp.id === oldId){
+                employees[x].name = newName;
+                break;
+            }
+        }
+    }
+})
 app.post('/',(req,res)=>{
     let emp = req.body;
     console.log(emp)
