@@ -33,6 +33,7 @@ app.put('/:id',(req,res)=>{
             let emp = employees[x];
             if(emp.id === oldId){
                 employees[x].name = newName;
+                res.send(oldId);
                 break;
             }
         }
