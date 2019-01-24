@@ -1,13 +1,37 @@
 const express = require('express')
+let bodyParser = require('body-parser');
 var app=express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended :false}))
 let employees=[
-    
+    {
+        "id":1,
+        "name":"abdul"
+    },
+    {
+        "id":2,
+        "name":"shivani"
+    },
+    {
+        "id":3,
+        "name":"aman"
+    }
 ];
 app.get('/',(req,res)=>{
 res.send('in index js node');
 });
 
-app.listen(process.env.PORT,()=>console.log('listening on port'));
+app.post('/',(req,res)=>{
+    let emp = req.body;
+    console.log(emp)
+    if(!emp || emp.name===""){
+        res.send({"error":"Name can't be empty"});
+    }else{
+        employees.push(emp);
+        res.send(employees);
+    }
+})
+app.listen(process.env.PORT,()=>console.log(`listening on port $[process.env.PORT]`));
 
 
 
