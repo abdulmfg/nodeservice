@@ -26,12 +26,16 @@ app.delete('/',(req,res)=>{
     res.send(employees);
 })
 app.put('/:id',(req,res)=>{
+    
     let newName=req.body.name;
     let oldId=req.params.id;
+    console.log('id is',oldId)
+    console.log(newName)
     if(oldId){
         for(let x=0;x<employees.length;x++){
             let emp = employees[x];
-            if(emp.id === oldId){
+            if(emp.id == oldId){
+                
                 employees[x].name = newName;
                 res.send(oldId);
                 break;
@@ -49,7 +53,7 @@ app.post('/',(req,res)=>{
         res.send(employees);
     }
 })
-app.listen(process.env.PORT,()=>console.log(`listening on port $[process.env.PORT]`));
+app.listen(process.env.PORT,()=>console.log(`listening on port ${2+3}`));
 
 
 
