@@ -18,8 +18,12 @@ let employees=[
     }
 ];
 app.get('/',(req,res)=>{
-res.send('in index js node');
+res.send(employees);
 });
+
+app.delete('/',(req,res)=>{
+    employees.pop();
+})
 
 app.post('/',(req,res)=>{
     let emp = req.body;
