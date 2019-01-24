@@ -18,11 +18,7 @@ let employees=[
     }
 ];
 app.get('/',(req,res)=>{
-let tempEmployee = req.headers;
-  //  console.log(tempEmployee)
-if(tempEmployee)
-employees.push(req.body);
-res.send(employees);
+res.send('in index js node');
 });
 
 app.post('/',(req,res)=>{
