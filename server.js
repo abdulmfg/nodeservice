@@ -23,6 +23,7 @@ res.send(employees);
 
 app.delete('/',(req,res)=>{
     employees.pop();
+    res.send(employees);
 })
 
 app.post('/',(req,res)=>{
