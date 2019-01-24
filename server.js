@@ -20,7 +20,7 @@ let employees=[
 app.get('/',(req,res)=>{
 res.send('in index js node');
 });
-
+/*
 app.post('/',(req,res)=>{
     let emp = req.body;
     console.log(emp)
@@ -33,7 +33,7 @@ app.post('/',(req,res)=>{
 })
 app.listen(3000,()=>console.log('listening on port'));
 
-
+*/
 
 /*express()
   .use(express.static(path.join(__dirname, 'public')))
